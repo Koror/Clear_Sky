@@ -3,10 +3,11 @@
     <color name="colorPrimary">#82d4dc</color>
     <color name="colorPrimaryDark">#5595c5</color>
     <color name="colorAccent">#466593</color>
-    <color name="colorDay">#2da8ff</color>
-    <color name="colorDayEnd">#63fdb0</color>
+    <color name="colorDay">#6a87b6</color>
+    <color name="colorDayEnd">#4773a9</color>
     <color name="colorNight">#01093b</color>
     <color name="colorNightEnd">#000215</color>
     <color name="textColor">#fff</color>
     <color name="errorTextColor">#a12222</color>
+    <color name="layout">#4bcac8de</color>
 </resources>

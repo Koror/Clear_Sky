@@ -1,5 +1,5 @@
 
-package com.koror.myweather.pojo;
+package com.koror.myweather.pojoday;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

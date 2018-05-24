@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">MyWeather</string>
+    <string name="app_name">Clear Sky</string>
     <string name="search">ПОИСК</string>
-    <string name="wind">Ветер: %1$d м/с</string>
-    <string name="sunrise">Восход: %1$s</string>
-    <string name="sunset">Закат: %1$s</string>
-    <string name="defaultCity">Moscow</string>
+    <string name="wind"> %1$d м/с</string>
+    <string name="temp">%1$d ° </string>
+    <string name="defaultCity">Moscow RU</string>
     <string name="internetError">Ошибка. Проверьте интернет соединение.</string>
     <string name="cityError">Не правильно введен город</string>
 </resources>

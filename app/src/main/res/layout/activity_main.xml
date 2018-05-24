@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,11 +16,12 @@
         android:id="@+id/tv_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:layout_toStartOf="@id/button"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@id/button"
+        android:text="@string/defaultCity"
+        android:textColor="@color/textColor"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
@@ -33,67 +35,376 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@id/tv_city"
+        android:layout_marginBottom="30dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/i01d"
-        android:layout_marginBottom="10dp"/>
+        android:src="@drawable/i01d" />
 
 
     <TextView
         android:id="@+id/tv_temp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/textColor"
-        android:textSize="30sp"
-        android:layout_marginBottom="2dp"
         android:layout_below="@id/tv_city"
-        android:layout_toEndOf="@id/icon"/>
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/icon"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+
+        android:textColor="@color/textColor"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
         android:layout_below="@id/tv_temp"
-        android:layout_toEndOf="@id/icon"/>
+        android:layout_toEndOf="@id/icon"
+        android:textColor="@color/textColor"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_wind"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/tv_desc"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/tv_temp"
         android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:layout_below="@id/icon"/>
+        android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/tv_sunrise"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/rl_day_forecast"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:layout_below="@id/tv_wind"/>
+        android:layout_below="@+id/icon"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/layout">
 
-    <TextView
-        android:id="@+id/tv_sunset"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/day_textView1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/day_textView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/day_textView2"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView4"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/day_textView3"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView5"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/day_textView4"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/day_imageView1"
+            android:layout_below="@+id/day_textView1"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/i01d"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/day_imageView2"
+            android:layout_below="@+id/day_textView2"
+            android:layout_toEndOf="@id/day_textView1"
+            app:srcCompat="@drawable/i01d"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/day_imageView3"
+            android:layout_below="@+id/day_textView3"
+            android:layout_toEndOf="@id/day_textView2"
+            app:srcCompat="@drawable/i01d"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/day_imageView4"
+            android:layout_below="@+id/day_textView4"
+            android:layout_toEndOf="@id/day_textView3"
+            app:srcCompat="@drawable/i01d"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/day_imageView5"
+            android:layout_below="@+id/day_textView5"
+            android:layout_toEndOf="@id/day_textView4"
+            app:srcCompat="@drawable/i01d"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/day_textView6"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/day_imageView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView7"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_imageView1"
+            android:layout_toEndOf="@+id/day_imageView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView8"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_imageView1"
+            android:layout_toEndOf="@+id/day_imageView2"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView9"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_imageView1"
+            android:layout_toEndOf="@+id/day_imageView3"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/day_textView10"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_imageView1"
+            android:layout_toEndOf="@+id/day_imageView4"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/rl_day_forecast"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rl_week"
         android:layout_marginBottom="10dp"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:layout_below="@id/tv_sunrise"/>
+        android:background="@color/layout">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView2"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView3"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView4"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginEnd="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/i01d" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/i01d" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView3"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView2"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/i01d" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView4"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView3"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/i01d" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView5"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/textView4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/i01d" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_toEndOf="@+id/imageView1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_toEndOf="@+id/imageView2"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_toEndOf="@+id/imageView3"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_toEndOf="@+id/imageView4"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_info"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/errorTextColor"
-        android:textSize="24sp"
-        android:layout_below="@id/tv_sunset"/>
+        android:layout_below="@id/rl_week"
+        android:textColor="@color/textColor"
+        android:textSize="18sp" />
 
 </RelativeLayout>
